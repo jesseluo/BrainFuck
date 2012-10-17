@@ -7,7 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JLBFCompiler.h"
 
-@interface JLViewController : UIViewController
+@interface JLViewController : UIViewController <UITextViewDelegate>
+
+@property (strong, nonatomic) IBOutlet UITextView *ResultPad;
+@property (strong, nonatomic) IBOutlet UITextView *CodePad;
+@property (strong, nonatomic) IBOutlet UIToolbar *CharInputBar;
+
+- (IBAction)charBtnPressed:(UIBarButtonItem *)sender;
+- (IBAction)runBtnPressed:(UIBarButtonItem *)sender;
 
 @end
