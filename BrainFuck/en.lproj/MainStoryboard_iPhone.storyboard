@@ -1,150 +1,204 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="7TE-b9-eMr">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
+        <scene sceneID="bVG-FQ-6u3">
+            <objects>
+                <viewController id="h0M-Bz-EFe" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7rg-BK-nef">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="IIm-Xo-plZ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="up4-xT-2Ue" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="607" y="-531"/>
+        </scene>
+        <!--Code View Controller-->
         <scene sceneID="5">
             <objects>
-                <viewController id="2" customClass="JLViewController" sceneMemberID="viewController">
+                <viewController id="2" customClass="JLCodeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3">
-                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gha-f9-Bfd">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="180" id="ue8-oP-Qdb"/>
-                                </constraints>
                                 <string key="text">++++++++++[>+++++++>++++++++++>+++>+&lt;&lt;&lt;&lt;-]
 >++.>+.+++++++..+++.>++.&lt;&lt;+++++++++++++++.
 >.+++.------.--------.>+.>.</string>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="14"/>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="KUK-5W-4Ok">
                                 <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="cRd-zw-Yhs"/>
                                     <barButtonItem title=">" id="u8D-Rl-Atb">
                                         <connections>
                                             <action selector="charBtnPressed:" destination="2" id="4Pp-HI-chX"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="HJD-tL-Lms"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="5wW-GW-LpF"/>
                                     <barButtonItem title="&lt;" id="CJo-YI-Bwn">
                                         <connections>
                                             <action selector="charBtnPressed:" destination="2" id="zfd-dO-7F2"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="mAk-ys-gug"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="FGd-HR-oR2"/>
                                     <barButtonItem title="+" id="wiI-tZ-5L8">
                                         <connections>
                                             <action selector="charBtnPressed:" destination="2" id="DAM-s8-2iJ"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="17T-Jz-ec9"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="12g-zO-E4P"/>
                                     <barButtonItem title="-" id="kAn-Ra-XHe">
                                         <connections>
                                             <action selector="charBtnPressed:" destination="2" id="rmr-eq-lcH"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="JLn-Es-tyy"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="GMv-j9-deo"/>
                                     <barButtonItem title="." id="sPl-S2-s2a">
                                         <connections>
                                             <action selector="charBtnPressed:" destination="2" id="7DC-Ld-gM6"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="1DL-XV-moX"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="69M-qt-60p"/>
+                                    <barButtonItem title="," id="dKo-ln-KFN">
+                                        <connections>
+                                            <action selector="charBtnPressed:" destination="2" id="wOF-zb-cEP"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="i3q-eR-rGo"/>
                                     <barButtonItem title="[" id="Mv9-ac-Bee">
                                         <connections>
                                             <action selector="charBtnPressed:" destination="2" id="yG3-rJ-OKr"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Rc7-cX-493"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="NH2-pZ-euN"/>
                                     <barButtonItem title="]" id="Zsf-Bq-puL">
                                         <connections>
                                             <action selector="charBtnPressed:" destination="2" id="E9m-Gc-gu1"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="WRv-cf-vpR"/>
                                 </items>
                             </toolbar>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="blackTranslucent" translatesAutoresizingMaskIntoConstraints="NO" id="GmI-ij-5eo">
                                 <items>
-                                    <barButtonItem title="Return" id="TMf-Nd-8iF">
-                                        <connections>
-                                            <action selector="charBtnPressed:" destination="2" id="Nfs-Jq-L2x"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="V7C-By-Ybm"/>
-                                    <barButtonItem title="Run!" id="Hk9-j2-exB">
-                                        <connections>
-                                            <action selector="runBtnPressed:" destination="2" id="jP6-mh-j8b"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="2Bn-AK-ahK"/>
                                     <barButtonItem title="Delete" id="Cqy-ri-AvS">
                                         <connections>
                                             <action selector="charBtnPressed:" destination="2" id="tc4-kG-TxQ"/>
                                         </connections>
                                     </barButtonItem>
+                                    <barButtonItem title="Return" id="TMf-Nd-8iF">
+                                        <connections>
+                                            <action selector="charBtnPressed:" destination="2" id="Nfs-Jq-L2x"/>
+                                        </connections>
+                                    </barButtonItem>
                                 </items>
                             </toolbar>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="of6-QY-PUl">
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="KUK-5W-4Ok" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="7Ul-TF-Wax"/>
+                            <constraint firstItem="GmI-ij-5eo" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="C2F-uA-NGr"/>
+                            <constraint firstItem="gha-f9-Bfd" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="FJA-iX-X64"/>
+                            <constraint firstItem="GmI-ij-5eo" firstAttribute="bottom" secondItem="KUK-5W-4Ok" secondAttribute="top" type="default" id="FST-of-rmG"/>
+                            <constraint firstItem="gha-f9-Bfd" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="WKX-fk-g7H"/>
+                            <constraint firstItem="KUK-5W-4Ok" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="ZTj-KB-ajG"/>
+                            <constraint firstItem="GmI-ij-5eo" firstAttribute="top" secondItem="gha-f9-Bfd" secondAttribute="bottom" type="default" id="aQB-1k-ywV"/>
+                            <constraint firstItem="GmI-ij-5eo" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="g3l-K1-m2w"/>
+                            <constraint firstItem="KUK-5W-4Ok" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="hDk-Gc-dml"/>
+                            <constraint firstItem="gha-f9-Bfd" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="scF-bJ-Cls"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="7UW-oa-LHh">
+                        <barButtonItem key="leftBarButtonItem" title="Info" id="SHg-Dq-ute">
+                            <connections>
+                                <segue destination="h0M-Bz-EFe" kind="push" id="mcl-D7-WFC"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Run!" id="Hk9-j2-exB">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <segue destination="ugy-yp-AyG" kind="push" id="29x-VB-7G3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="CharInputBar" destination="KUK-5W-4Ok" id="y6U-Mg-0Lr"/>
+                        <outlet property="CodePad" destination="gha-f9-Bfd" id="r7d-Ee-2ey"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="705" y="44"/>
+        </scene>
+        <!--Result View Controller-->
+        <scene sceneID="bx2-Ax-1Jq">
+            <objects>
+                <viewController id="ugy-yp-AyG" customClass="JLResultViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="y52-1r-C67">
+                        <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RlY-iU-jxf">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoDark" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ajG-y0-8xn">
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                <state key="normal">
-                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gha-f9-Bfd" firstAttribute="top" secondItem="GmI-ij-5eo" secondAttribute="bottom" type="default" id="2aB-su-oDB"/>
-                            <constraint firstAttribute="trailing" secondItem="ajG-y0-8xn" secondAttribute="trailing" constant="8" id="4hz-p6-9AB"/>
-                            <constraint firstItem="KUK-5W-4Ok" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="7Ul-TF-Wax"/>
-                            <constraint firstItem="GmI-ij-5eo" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="BFo-sa-esD"/>
-                            <constraint firstItem="of6-QY-PUl" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="HmT-E4-fS0"/>
-                            <constraint firstItem="of6-QY-PUl" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="O4z-MN-2Hv"/>
-                            <constraint firstItem="gha-f9-Bfd" firstAttribute="bottom" secondItem="KUK-5W-4Ok" secondAttribute="top" type="default" id="RYq-Yb-hRt"/>
-                            <constraint firstItem="GmI-ij-5eo" firstAttribute="top" secondItem="of6-QY-PUl" secondAttribute="bottom" type="default" id="Ve2-SS-nc2"/>
-                            <constraint firstItem="gha-f9-Bfd" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="WKX-fk-g7H"/>
-                            <constraint firstItem="GmI-ij-5eo" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="aI7-Go-gCt"/>
-                            <constraint firstItem="ajG-y0-8xn" firstAttribute="top" secondItem="3" secondAttribute="top" constant="6" id="c4i-et-r3p"/>
-                            <constraint firstItem="of6-QY-PUl" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="dKV-xS-4rD"/>
-                            <constraint firstItem="KUK-5W-4Ok" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="hDk-Gc-dml"/>
-                            <constraint firstItem="KUK-5W-4Ok" firstAttribute="bottom" secondItem="3" secondAttribute="bottom" type="default" id="kKR-BW-jKH"/>
-                            <constraint firstItem="gha-f9-Bfd" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="scF-bJ-Cls"/>
+                            <constraint firstItem="RlY-iU-jxf" firstAttribute="leading" secondItem="y52-1r-C67" secondAttribute="leading" type="default" id="35d-Xf-g71"/>
+                            <constraint firstItem="RlY-iU-jxf" firstAttribute="trailing" secondItem="y52-1r-C67" secondAttribute="trailing" type="default" id="5LL-94-yBy"/>
+                            <constraint firstItem="RlY-iU-jxf" firstAttribute="bottom" secondItem="y52-1r-C67" secondAttribute="bottom" type="default" id="U6V-62-1KB"/>
+                            <constraint firstItem="RlY-iU-jxf" firstAttribute="top" secondItem="y52-1r-C67" secondAttribute="top" type="default" id="Y51-UB-oh1"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="bYb-UR-vbn"/>
                     <connections>
-                        <outlet property="CharInputBar" destination="KUK-5W-4Ok" id="y6U-Mg-0Lr"/>
-                        <outlet property="CodePad" destination="gha-f9-Bfd" id="r7d-Ee-2ey"/>
-                        <outlet property="ResultPad" destination="of6-QY-PUl" id="ods-2m-gQb"/>
+                        <outlet property="ResultPad" destination="RlY-iU-jxf" id="efk-xk-wQr"/>
                     </connections>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xxW-wq-si3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1312" y="33"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NKv-46-0EP">
+            <objects>
+                <navigationController id="7TE-b9-eMr" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="C0n-Dw-xYC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2" kind="relationship" relationship="rootViewController" id="qiG-Gj-Y4C"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Sxv-go-vLb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="179" y="44"/>
         </scene>
     </scenes>
     <classes>
-        <class className="JLViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/JLViewController.h"/>
+        <class className="JLCodeViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JLCodeViewController.h"/>
             <relationships>
                 <relationship kind="action" name="charBtnPressed:" candidateClass="UIBarButtonItem"/>
-                <relationship kind="action" name="runBtnPressed:" candidateClass="UIBarButtonItem"/>
                 <relationship kind="outlet" name="CharInputBar" candidateClass="UIToolbar"/>
                 <relationship kind="outlet" name="CodePad" candidateClass="UITextView"/>
+            </relationships>
+        </class>
+        <class className="JLResultViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/JLResultViewController.h"/>
+            <relationships>
                 <relationship kind="outlet" name="ResultPad" candidateClass="UITextView"/>
             </relationships>
         </class>

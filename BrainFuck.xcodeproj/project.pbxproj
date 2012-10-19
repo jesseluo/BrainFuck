@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8851F8E71631893500382E2B /* JLResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8851F8E61631893500382E2B /* JLResultViewController.m */; };
 		887D80B3162D9179009A37D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887D80B2162D9179009A37D3 /* UIKit.framework */; };
 		887D80B5162D9179009A37D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887D80B4162D9179009A37D3 /* Foundation.framework */; };
 		887D80B7162D9179009A37D3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887D80B6162D9179009A37D3 /* CoreGraphics.framework */; };
@@ -18,7 +19,7 @@
 		887D80C9162D9179009A37D3 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 887D80C8162D9179009A37D3 /* Default-568h@2x.png */; };
 		887D80CC162D9179009A37D3 /* MainStoryboard_iPhone.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887D80CA162D9179009A37D3 /* MainStoryboard_iPhone.storyboard */; };
 		887D80CF162D9179009A37D3 /* MainStoryboard_iPad.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 887D80CD162D9179009A37D3 /* MainStoryboard_iPad.storyboard */; };
-		887D80D2162D9179009A37D3 /* JLViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 887D80D1162D9179009A37D3 /* JLViewController.m */; };
+		887D80D2162D9179009A37D3 /* JLCodeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 887D80D1162D9179009A37D3 /* JLCodeViewController.m */; };
 		887D80E3162D96A4009A37D3 /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 887D80E2162D96A4009A37D3 /* Icon.png */; };
 		887D80E5162D96B0009A37D3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 887D80E4162D96B0009A37D3 /* Icon@2x.png */; };
 		887D80E7162D96BA009A37D3 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 887D80E6162D96BA009A37D3 /* Icon-72.png */; };
@@ -27,6 +28,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8851F8E51631893500382E2B /* JLResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLResultViewController.h; sourceTree = "<group>"; };
+		8851F8E61631893500382E2B /* JLResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLResultViewController.m; sourceTree = "<group>"; };
 		887D80AE162D9179009A37D3 /* BrainFuck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainFuck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		887D80B2162D9179009A37D3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		887D80B4162D9179009A37D3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -42,8 +45,8 @@
 		887D80C8162D9179009A37D3 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		887D80CB162D9179009A37D3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPhone.storyboard; sourceTree = "<group>"; };
 		887D80CE162D9179009A37D3 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = en; path = en.lproj/MainStoryboard_iPad.storyboard; sourceTree = "<group>"; };
-		887D80D0162D9179009A37D3 /* JLViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLViewController.h; sourceTree = "<group>"; };
-		887D80D1162D9179009A37D3 /* JLViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLViewController.m; sourceTree = "<group>"; };
+		887D80D0162D9179009A37D3 /* JLCodeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = JLCodeViewController.h; sourceTree = "<group>"; };
+		887D80D1162D9179009A37D3 /* JLCodeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = JLCodeViewController.m; sourceTree = "<group>"; };
 		887D80E2162D96A4009A37D3 /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		887D80E4162D96B0009A37D3 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		887D80E6162D96BA009A37D3 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
@@ -107,8 +110,10 @@
 				887D80EA162DA8C4009A37D3 /* JLBFCompiler.h */,
 				887D80EB162DA8C4009A37D3 /* JLBFCompiler.mm */,
 				887D80CD162D9179009A37D3 /* MainStoryboard_iPad.storyboard */,
-				887D80D0162D9179009A37D3 /* JLViewController.h */,
-				887D80D1162D9179009A37D3 /* JLViewController.m */,
+				887D80D0162D9179009A37D3 /* JLCodeViewController.h */,
+				887D80D1162D9179009A37D3 /* JLCodeViewController.m */,
+				8851F8E51631893500382E2B /* JLResultViewController.h */,
+				8851F8E61631893500382E2B /* JLResultViewController.m */,
 				887D80B9162D9179009A37D3 /* Supporting Files */,
 			);
 			path = BrainFuck;
@@ -217,8 +222,9 @@
 			files = (
 				887D80BF162D9179009A37D3 /* main.m in Sources */,
 				887D80C3162D9179009A37D3 /* JLAppDelegate.m in Sources */,
-				887D80D2162D9179009A37D3 /* JLViewController.m in Sources */,
+				887D80D2162D9179009A37D3 /* JLCodeViewController.m in Sources */,
 				887D80EC162DA8C4009A37D3 /* JLBFCompiler.mm in Sources */,
+				8851F8E71631893500382E2B /* JLResultViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
