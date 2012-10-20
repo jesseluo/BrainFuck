@@ -16,6 +16,13 @@ BrainFuck
 1. 输入操作（即','操作）的交互与编译
 2. 考虑BF代码的特殊情况并加入防护
 3. sample source选择器
+<strike>4. 测试TestFlight</strike>
+
+###学习知识点
+1. UITextView及自定义键盘等操作
+2. Objective C++混编，C++基本知识复习^ ^
+3. 分辨率适配
+4. TestFlight分发测试
 
 ###更新日志
 2012-10-20 Ver 0.6
