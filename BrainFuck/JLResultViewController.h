@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "JLBFCompiler.h"
 
 @interface JLResultViewController : UIViewController
 
 @property (strong, nonatomic) IBOutlet UITextView *ResultPad;
+@property (strong, nonatomic) NSString *Source;
 
 @end

@@ -8,8 +8,9 @@
 
 #import "JLResultViewController.h"
 
-@interface JLResultViewController ()
-
+@interface JLResultViewController () {
+    JLBFCompiler *_Compiler;
+}
 @end
 
 @implementation JLResultViewController
@@ -26,7 +27,9 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view.
+    _Compiler = [[JLBFCompiler alloc] initWithCode:_Source];
+    _ResultPad.text = [_Compiler compile];
+    NSLog(@"Just compiled\nresult is %@", _ResultPad.text);
 }
 
 - (void)didReceiveMemoryWarning

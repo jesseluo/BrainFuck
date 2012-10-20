@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		8851F8E71631893500382E2B /* JLResultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8851F8E61631893500382E2B /* JLResultViewController.m */; };
+		8851F8F5163237D400382E2B /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 8851F8F4163237D400382E2B /* README.md */; };
 		887D80B3162D9179009A37D3 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887D80B2162D9179009A37D3 /* UIKit.framework */; };
 		887D80B5162D9179009A37D3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887D80B4162D9179009A37D3 /* Foundation.framework */; };
 		887D80B7162D9179009A37D3 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 887D80B6162D9179009A37D3 /* CoreGraphics.framework */; };
@@ -30,6 +31,7 @@
 /* Begin PBXFileReference section */
 		8851F8E51631893500382E2B /* JLResultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLResultViewController.h; sourceTree = "<group>"; };
 		8851F8E61631893500382E2B /* JLResultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLResultViewController.m; sourceTree = "<group>"; };
+		8851F8F4163237D400382E2B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		887D80AE162D9179009A37D3 /* BrainFuck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BrainFuck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		887D80B2162D9179009A37D3 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		887D80B4162D9179009A37D3 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -76,6 +78,7 @@
 				887D80E6162D96BA009A37D3 /* Icon-72.png */,
 				887D80E4162D96B0009A37D3 /* Icon@2x.png */,
 				887D80E2162D96A4009A37D3 /* Icon.png */,
+				8851F8F4163237D400382E2B /* README.md */,
 				887D80D8162D9689009A37D3 /* Resources */,
 				887D80B8162D9179009A37D3 /* BrainFuck */,
 				887D80B1162D9179009A37D3 /* Frameworks */,
@@ -210,6 +213,7 @@
 				887D80E5162D96B0009A37D3 /* Icon@2x.png in Resources */,
 				887D80E7162D96BA009A37D3 /* Icon-72.png in Resources */,
 				887D80E9162D96C0009A37D3 /* Icon-72@2x.png in Resources */,
+				8851F8F5163237D400382E2B /* README.md in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

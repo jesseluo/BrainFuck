@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import "JLResultViewController.h"
-#import "JLBFCompiler.h"
 
 @interface JLCodeViewController : UIViewController <UITextViewDelegate>
 

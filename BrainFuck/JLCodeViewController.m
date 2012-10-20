@@ -14,9 +14,6 @@
 
 @implementation JLCodeViewController
 
-@synthesize CodePad = _CodePad;
-@synthesize CharInputBar = _CharInputBar;
-
 - (void)viewDidLoad
 {
     [super viewDidLoad];
@@ -72,10 +69,8 @@
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
 {
-    JLBFCompiler *compiler = [[JLBFCompiler alloc] initWithCode:_CodePad.text];
-    NSLog(@"Just compiled");
     JLResultViewController *resultViewController = [segue destinationViewController];
-    resultViewController.ResultPad.text = [compiler compile];
+    resultViewController.Source = _CodePad.text;
 }
   
 @end
