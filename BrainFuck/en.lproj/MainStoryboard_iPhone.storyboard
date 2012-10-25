@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2840" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="7TE-b9-eMr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2843" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="7TE-b9-eMr">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1926"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1929"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -121,7 +121,7 @@
                                 <segue destination="h0M-Bz-EFe" kind="push" id="mcl-D7-WFC"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Run!" id="Hk9-j2-exB">
+                        <barButtonItem key="rightBarButtonItem" title="Compile" id="Hk9-j2-exB">
                             <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                             <connections>
                                 <segue destination="ugy-yp-AyG" kind="push" id="29x-VB-7G3"/>
@@ -147,21 +147,54 @@
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RlY-iU-jxf">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="101" id="pbX-wA-akD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mrI-rx-7Hh">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="alphabet" keyboardAppearance="alert"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Output" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l3y-bp-FqK">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Input" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="06m-iJ-wqZ">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="RlY-iU-jxf" firstAttribute="leading" secondItem="y52-1r-C67" secondAttribute="leading" type="default" id="35d-Xf-g71"/>
-                            <constraint firstItem="RlY-iU-jxf" firstAttribute="trailing" secondItem="y52-1r-C67" secondAttribute="trailing" type="default" id="5LL-94-yBy"/>
-                            <constraint firstItem="RlY-iU-jxf" firstAttribute="bottom" secondItem="y52-1r-C67" secondAttribute="bottom" type="default" id="U6V-62-1KB"/>
-                            <constraint firstItem="RlY-iU-jxf" firstAttribute="top" secondItem="y52-1r-C67" secondAttribute="top" type="default" id="Y51-UB-oh1"/>
+                            <constraint firstAttribute="trailing" secondItem="mrI-rx-7Hh" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="M8o-An-Kuq"/>
+                            <constraint firstItem="l3y-bp-FqK" firstAttribute="leading" secondItem="y52-1r-C67" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="OAr-Nw-N7f"/>
+                            <constraint firstItem="l3y-bp-FqK" firstAttribute="top" secondItem="y52-1r-C67" secondAttribute="top" type="default" id="SBG-Dl-0Ys"/>
+                            <constraint firstItem="06m-iJ-wqZ" firstAttribute="leading" secondItem="y52-1r-C67" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="SrR-01-8gj"/>
+                            <constraint firstItem="RlY-iU-jxf" firstAttribute="top" secondItem="l3y-bp-FqK" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="WhI-iy-iFB"/>
+                            <constraint firstAttribute="bottom" secondItem="mrI-rx-7Hh" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="Wi4-pz-d9A"/>
+                            <constraint firstItem="06m-iJ-wqZ" firstAttribute="top" secondItem="RlY-iU-jxf" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="WwZ-ic-OKn"/>
+                            <constraint firstAttribute="trailing" secondItem="RlY-iU-jxf" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="crw-hu-Rha"/>
+                            <constraint firstItem="RlY-iU-jxf" firstAttribute="leading" secondItem="y52-1r-C67" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="d01-NU-Kb0"/>
+                            <constraint firstItem="mrI-rx-7Hh" firstAttribute="top" secondItem="06m-iJ-wqZ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="dmY-zd-DVU"/>
+                            <constraint firstItem="mrI-rx-7Hh" firstAttribute="leading" secondItem="y52-1r-C67" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="yJP-56-Dwp"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="bYb-UR-vbn"/>
+                    <navigationItem key="navigationItem" id="bYb-UR-vbn">
+                        <barButtonItem key="rightBarButtonItem" title="Run!" id="Jpl-P8-9yN">
+                            <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                            <connections>
+                                <action selector="runButtonPressed:" destination="ugy-yp-AyG" id="jHP-k2-q86"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
-                        <outlet property="ResultPad" destination="RlY-iU-jxf" id="efk-xk-wQr"/>
+                        <outlet property="InputTextview" destination="mrI-rx-7Hh" id="toD-nE-kDI"/>
+                        <outlet property="OutputTextview" destination="RlY-iU-jxf" id="Tvq-o1-hRD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xxW-wq-si3" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -199,7 +232,9 @@
         <class className="JLResultViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/JLResultViewController.h"/>
             <relationships>
-                <relationship kind="outlet" name="ResultPad" candidateClass="UITextView"/>
+                <relationship kind="action" name="runButtonPressed:" candidateClass="UIBarButtonItem"/>
+                <relationship kind="outlet" name="InputTextview" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="OutputTextview" candidateClass="UITextView"/>
             </relationships>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">

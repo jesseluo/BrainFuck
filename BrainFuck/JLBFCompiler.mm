@@ -71,7 +71,8 @@ private:
                     OutputBufferTail++;
                     break;
                 case ',':
-                    *pCurrData = getchar();
+                    *pCurrData = InputBuffer[InputBufferTail];
+                    InputBufferTail++;
                     break;
                     
                 case '[':

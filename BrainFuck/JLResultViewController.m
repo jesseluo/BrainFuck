@@ -27,9 +27,15 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    _Compiler = [[JLBFCompiler alloc] initWithCode:_Source];
-    _ResultPad.text = [_Compiler compile];
-    NSLog(@"Just compiled\nresult is %@", _ResultPad.text);
+    // add border for UITextview
+    _OutputTextview.layer.borderColor = [UIColor grayColor].CGColor;
+    _OutputTextview.layer.borderWidth = 1.0;
+    _OutputTextview.layer.cornerRadius = 5.0;
+
+    _InputTextview.layer.borderColor = [UIColor grayColor].CGColor;
+    _InputTextview.layer.borderWidth = 1.0;
+    _InputTextview.layer.cornerRadius = 5.0;
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -38,4 +44,11 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (IBAction)runButtonPressed:(UIBarButtonItem *)sender {
+    if (!_Compiler) {
+        _Compiler = [[JLBFCompiler alloc] initWithCode:_Source];
+    }
+    _OutputTextview.text = [_Compiler compile];
+    NSLog(@"Just compiled\nresult is %@", _OutputTextview.text);    
+}
 @end

@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <QuartzCore/QuartzCore.h>
 #import "JLBFCompiler.h"
 
 @interface JLResultViewController : UIViewController
 
-@property (strong, nonatomic) IBOutlet UITextView *ResultPad;
-@property (strong, nonatomic) NSString *Source;
+@property (strong, nonatomic) IBOutlet UITextView *OutputTextview;
+@property (strong, nonatomic) IBOutlet UITextView *InputTextview;
+- (IBAction)runButtonPressed:(UIBarButtonItem *)sender;
 
+@property (strong, nonatomic) NSString *Source;
 @end
