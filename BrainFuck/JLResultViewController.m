@@ -46,9 +46,10 @@
 
 - (IBAction)runButtonPressed:(UIBarButtonItem *)sender {
     if (!_Compiler) {
-        _Compiler = [[JLBFCompiler alloc] initWithCode:_Source];
+        _Compiler = [[JLBFCompiler alloc] init];
     }
-    _OutputTextview.text = [_Compiler compile];
+
+    _OutputTextview.text = [_Compiler compileCode:_Source withInput:_InputTextview.text];
     NSLog(@"Just compiled\nresult is %@", _OutputTextview.text);    
 }
 @end

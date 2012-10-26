@@ -10,8 +10,12 @@
 
 @interface JLBFCompiler : NSObject
 
+@property (strong, nonatomic) NSString *Code;
+@property (strong, nonatomic) NSString *Input;
+
 - (id)initWithCode:(NSString *) code;
-- (NSString *) compileWithCode:(NSString *) code;
+- (NSString *) compileCode:(NSString *) code withInput:(NSString *) input;
+- (NSString *) compileCode:(NSString *) code;
 - (NSString *) compile;
 
 @end

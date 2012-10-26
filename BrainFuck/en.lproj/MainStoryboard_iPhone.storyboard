@@ -27,11 +27,8 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="416"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gha-f9-Bfd">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text=",----------[----------------------.,----------]" translatesAutoresizingMaskIntoConstraints="NO" id="gha-f9-Bfd">
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <string key="text">++++++++++[>+++++++>++++++++++>+++>+&lt;&lt;&lt;&lt;-]
->++.>+.+++++++..+++.>++.&lt;&lt;+++++++++++++++.
->.+++.------.--------.>+.>.</string>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="16"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

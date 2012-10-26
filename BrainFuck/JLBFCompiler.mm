@@ -8,24 +8,56 @@
 
 #import "JLBFCompiler.h"
 
+#define GOODEND 0
+#define INPUTOVERFLOW 1
+#define LEFTBRACKETMISS 2
+#define RIGHTBRACKETMISS 3
+
 #pragma mark C++ code begin
 class BFCompiler {
 public:
-//    BFCompiler() {
-//        //do nothing here ^ ^
-//    }
+    BFCompiler() {
+        //do nothing here ^ ^
+    }
     
-    BFCompiler(NSString *code) {
+    BFCompiler(NSString *code, NSString *input) {
+        setCode(code);
+        setInput(input);
+    }
+    
+    void setCode(NSString *code) {
         // transfer nsstring to char[]
         const char *codeInChar = [code cStringUsingEncoding:NSASCIIStringEncoding];
         strcpy(CodeSegment, codeInChar);
         CodeLen = code.length;
     }
-    
-    
-    id getResult() {
-        compile();
-        return [[NSString alloc] initWithUTF8String:OutputBuffer];
+
+    void setInput(NSString *input) {
+        const char *inputInChar = [input cStringUsingEncoding:NSASCIIStringEncoding];
+        strcpy(InputBuffer, inputInChar);
+    }
+
+    NSString *getResult() {
+        int runningState = compile();
+        NSString *result = [[NSString alloc] initWithUTF8String:OutputBuffer];
+        
+        switch (runningState) {
+            case GOODEND:
+                break;
+            case INPUTOVERFLOW:
+                result = [result stringByAppendingString:@"\n[ERROR]Input Pointer Overflow!"];
+                break;
+            case LEFTBRACKETMISS:
+                result = [result stringByAppendingString:@"\n[ERROR]Missing Left Bracket!"];
+                break;
+            case RIGHTBRACKETMISS:
+                result = [result stringByAppendingString:@"\n[ERROR]Missing Right Bracket!"];
+                break;
+
+            default:
+                break;
+        }
+        return result;
     }
 
 private:    
@@ -43,26 +75,27 @@ private:
     int StackLen = 0;           // stack head
    
     // private methods
-    void compile() {
+    int compile() {
         NSLog(@"code in compiler is:\n%@",[[NSString alloc] initWithUTF8String:CodeSegment]);
+        NSLog(@"input in compiler is:\n%@",[[NSString alloc] initWithUTF8String:InputBuffer]);
         int iCurrCodePos = 0;
         
         // avoid underflow
-        char* pCurrData = DataSegment + 10000;
+        char *pCurrData = DataSegment + 10000;
         
         while (iCurrCodePos < CodeLen) {
             switch (CodeSegment[iCurrCodePos]) {
                 case '+':
-                    ++(*pCurrData);
+                    (*pCurrData)++;
                     break;
                 case '-':
-                    --(*pCurrData);
+                    (*pCurrData)--;
                     break;
                 case '>':
-                    ++pCurrData;
+                    pCurrData++;
                     break;
                 case '<':
-                    --pCurrData;
+                    pCurrData--;
                     break;
                 
                 // output current data
@@ -73,6 +106,10 @@ private:
                 case ',':
                     *pCurrData = InputBuffer[InputBufferTail];
                     InputBufferTail++;
+
+                    if ('\0' == *pCurrData) {
+                        return INPUTOVERFLOW;
+                    }
                     break;
                     
                 case '[':
@@ -80,6 +117,7 @@ private:
                     if (*pCurrData) {
                         Stack[StackLen++] = iCurrCodePos;
                     }
+                    
                     // 当前数据为0，找到与其匹配的']'，然后开始执行']'后的指令
                     else {
                         int j, k;
@@ -94,18 +132,20 @@ private:
                             iCurrCodePos = k;
                         }
                         else {
-//                            fprintf(stderr, "%s:%d\n" ,__FILE__, __LINE__);
-//                            return 3;
+                            return RIGHTBRACKETMISS;
                         }
                     } // end of if(*p) 
                     
                     break;
                     
-                    // 从栈里获得指令指针，跳转到对应的'['位置
-                case ']': 
-                    iCurrCodePos = Stack[StackLen - 1];  // 取出栈顶保存的指令指针，作为当前指针
-                    iCurrCodePos--;       // 指令指针后退一位，指向上一条指令。（此处减1的原因的下一条语句要加加—— ++iCurrCodePos;）
-                    StackLen--;        // 移动栈指针
+                case ']':
+                    if (0 >= StackLen) {
+                        return LEFTBRACKETMISS;
+                    }
+                    
+                    iCurrCodePos = Stack[StackLen - 1];  // pop top of stack, use as current pointer
+                    iCurrCodePos--; 
+                    StackLen--; 
                     break;
                     
                 default:
@@ -113,14 +153,12 @@ private:
 			} // end of switch
             iCurrCodePos++;
         } // end of while
-        
+        return GOODEND;
     }
 };
 
 #pragma mark OC code begin
-@implementation JLBFCompiler {
-    NSString *_Code;
-}
+@implementation JLBFCompiler 
 
 - (id)initWithCode:(NSString *) code {
     if(self = [super init])
@@ -128,19 +166,26 @@ private:
         _Code = code;
     }
     return self;
-
 }
 
-- (NSString *) compileWithCode:(NSString *) code {
+- (NSString *) compileCode:(NSString *) code withInput:(NSString *) input{
+    _Code = code;
+    _Input = input;
+    return [self compile];
+}
+
+- (NSString *) compileCode:(NSString *) code {
     _Code = code;
     return [self compile];
 }
 
 - (NSString *) compile {
     BFCompiler *compiler;
-    compiler = new BFCompiler(_Code);
+    compiler = new BFCompiler(_Code, _Input);
+    
     NSString *result = compiler->getResult();
     NSLog(@"compiler result:%@",result);
+
     free(compiler);
     return(result);
 }

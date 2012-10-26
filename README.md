@@ -13,17 +13,24 @@ BrainFuck
 3. 最后一次编译运行成功环境：OS X 10.8 ML + XCode 4.5 + iOS6 SDK
 
 ###TODO List
-1. 输入操作（即','操作）的交互与编译
-2. 考虑BF代码的特殊情况并加入防护
+<strike>1. 输入操作（即','操作）的交互与编译</strike>
+2. 完善BF代码的特殊情况并加入错误处理
 3. sample source选择器
 <strike>4. 测试TestFlight</strike>
+5. 规避键盘及UI调整
+6. Launch image
+7. 重构compiler，将C++代码单独抽离
+8. 单独开compiler跑，实现与UI线程交互
 
 ###学习知识点
 1. UITextView及自定义键盘等操作
 2. Objective C++混编，C++基本知识复习^ ^
-3. 分辨率适配
-4. TestFlight分发测试
+3. Cocoa多线程
+4. 多种分辨率适配
+5. TestFlight分发测试
 
 ###更新日志
 2012-10-20 Ver 0.6
 基本功能成型，可以编译简单的源码
+2012-10-26 Ver 0.61
+可以接受输入，有了基本的BF代码错误处理
