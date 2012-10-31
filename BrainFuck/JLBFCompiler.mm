@@ -72,19 +72,19 @@ private:
     int OutputBufferTail = 0;
     
     int Stack[100];             // '['，']' instruction stack
-    int StackLen = 0;           // stack head
+    int StackTop = 0;           // first element should be at [1]
    
     // private methods
     int compile() {
         NSLog(@"code in compiler is:\n%@",[[NSString alloc] initWithUTF8String:CodeSegment]);
         NSLog(@"input in compiler is:\n%@",[[NSString alloc] initWithUTF8String:InputBuffer]);
-        int iCurrCodePos = 0;
         
         // avoid underflow
         char *pCurrData = DataSegment + 10000;
+        int iCurrentCodePostion = 0;
         
-        while (iCurrCodePos < CodeLen) {
-            switch (CodeSegment[iCurrCodePos]) {
+        while (iCurrentCodePostion < CodeLen) {
+            switch (CodeSegment[iCurrentCodePostion]) {
                 case '+':
                     (*pCurrData)++;
                     break;
@@ -98,11 +98,11 @@ private:
                     pCurrData--;
                     break;
                 
-                // output current data
                 case '.':
                     OutputBuffer[OutputBufferTail] = (int)(*pCurrData);
                     OutputBufferTail++;
                     break;
+                    
                 case ',':
                     *pCurrData = InputBuffer[InputBufferTail];
                     InputBufferTail++;
@@ -113,45 +113,47 @@ private:
                     break;
                     
                 case '[':
-                    // 当前数据不为0，将指令指针压入栈中
+                    // if CurrData != 0 then go on
                     if (*pCurrData) {
-                        Stack[StackLen++] = iCurrCodePos;
+                        Stack[++StackTop] = iCurrentCodePostion;
                     }
-                    
-                    // 当前数据为0，找到与其匹配的']'，然后开始执行']'后的指令
+                    //else jump to paired ']'
                     else {
-                        int j, k;
-                        for (k = iCurrCodePos, j = 0; k < CodeLen; k++) {
-                            CodeSegment[k] == '[' && j++;
-                            CodeSegment[k] == ']' && j--;
-                            // can't find ']', break
-                            if (0 == j) break;
+                        int iPos, numOfPair;
+                        for (iPos = iCurrentCodePostion, numOfPair = 0; iPos < CodeLen; iPos++) {
+                            if ('[' == CodeSegment[iPos]) numOfPair++;
+                            if (']' == CodeSegment[iPos]) numOfPair--;
+                            // paired ']' found
+                            if (0 == numOfPair) break;
                         }
-                        // for循环因找到匹配的']'而退出
-                        if (0 == j) { 
-                            iCurrCodePos = k;
+                        
+                        if (0 == numOfPair) { 
+                            iCurrentCodePostion = iPos;
                         }
                         else {
                             return RIGHTBRACKETMISS;
                         }
-                    } // end of if(*p) 
-                    
+                    } // end of if (*pCurrData)
                     break;
                     
                 case ']':
-                    if (0 >= StackLen) {
+                    // if CurrData == 0 then go on                    
+                    if (!*pCurrData) break;
+
+                    if (0 >= StackTop) {
                         return LEFTBRACKETMISS;
                     }
                     
-                    iCurrCodePos = Stack[StackLen - 1];  // pop top of stack, use as current pointer
-                    iCurrCodePos--; 
-                    StackLen--; 
+                    // jump to paired '['
+                    iCurrentCodePostion = Stack[StackTop--];
+                    iCurrentCodePostion--;
                     break;
                     
                 default:
                     break;
 			} // end of switch
-            iCurrCodePos++;
+            
+            iCurrentCodePostion++;
         } // end of while
         return GOODEND;
     }
