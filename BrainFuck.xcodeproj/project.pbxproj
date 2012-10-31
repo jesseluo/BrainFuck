@@ -25,7 +25,8 @@
 		887D80E5162D96B0009A37D3 /* Icon@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 887D80E4162D96B0009A37D3 /* Icon@2x.png */; };
 		887D80E7162D96BA009A37D3 /* Icon-72.png in Resources */ = {isa = PBXBuildFile; fileRef = 887D80E6162D96BA009A37D3 /* Icon-72.png */; };
 		887D80E9162D96C0009A37D3 /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 887D80E8162D96C0009A37D3 /* Icon-72@2x.png */; };
-		887D80EC162DA8C4009A37D3 /* JLBFCompiler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 887D80EB162DA8C4009A37D3 /* JLBFCompiler.mm */; };
+		88FA08DA164191AA006D1B74 /* JLBFCompiler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88FA08D7164191AA006D1B74 /* JLBFCompiler.mm */; };
+		88FA08DB164191AA006D1B74 /* JLRealCompiler.mm in Sources */ = {isa = PBXBuildFile; fileRef = 88FA08D9164191AA006D1B74 /* JLRealCompiler.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -53,8 +54,10 @@
 		887D80E4162D96B0009A37D3 /* Icon@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon@2x.png"; sourceTree = "<group>"; };
 		887D80E6162D96BA009A37D3 /* Icon-72.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72.png"; sourceTree = "<group>"; };
 		887D80E8162D96C0009A37D3 /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
-		887D80EA162DA8C4009A37D3 /* JLBFCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLBFCompiler.h; sourceTree = "<group>"; };
-		887D80EB162DA8C4009A37D3 /* JLBFCompiler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JLBFCompiler.mm; sourceTree = "<group>"; };
+		88FA08D6164191AA006D1B74 /* JLBFCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLBFCompiler.h; sourceTree = "<group>"; };
+		88FA08D7164191AA006D1B74 /* JLBFCompiler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JLBFCompiler.mm; sourceTree = "<group>"; };
+		88FA08D8164191AA006D1B74 /* JLRealCompiler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLRealCompiler.h; sourceTree = "<group>"; };
+		88FA08D9164191AA006D1B74 /* JLRealCompiler.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = JLRealCompiler.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,11 +110,10 @@
 		887D80B8162D9179009A37D3 /* BrainFuck */ = {
 			isa = PBXGroup;
 			children = (
+				88FA08D5164191AA006D1B74 /* compiler */,
 				887D80C1162D9179009A37D3 /* JLAppDelegate.h */,
 				887D80C2162D9179009A37D3 /* JLAppDelegate.m */,
 				887D80CA162D9179009A37D3 /* MainStoryboard_iPhone.storyboard */,
-				887D80EA162DA8C4009A37D3 /* JLBFCompiler.h */,
-				887D80EB162DA8C4009A37D3 /* JLBFCompiler.mm */,
 				887D80CD162D9179009A37D3 /* MainStoryboard_iPad.storyboard */,
 				887D80D0162D9179009A37D3 /* JLCodeViewController.h */,
 				887D80D1162D9179009A37D3 /* JLCodeViewController.m */,
@@ -149,6 +151,17 @@
 			children = (
 			);
 			path = images;
+			sourceTree = "<group>";
+		};
+		88FA08D5164191AA006D1B74 /* compiler */ = {
+			isa = PBXGroup;
+			children = (
+				88FA08D6164191AA006D1B74 /* JLBFCompiler.h */,
+				88FA08D7164191AA006D1B74 /* JLBFCompiler.mm */,
+				88FA08D8164191AA006D1B74 /* JLRealCompiler.h */,
+				88FA08D9164191AA006D1B74 /* JLRealCompiler.mm */,
+			);
+			path = compiler;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -227,8 +240,9 @@
 				887D80BF162D9179009A37D3 /* main.m in Sources */,
 				887D80C3162D9179009A37D3 /* JLAppDelegate.m in Sources */,
 				887D80D2162D9179009A37D3 /* JLCodeViewController.m in Sources */,
-				887D80EC162DA8C4009A37D3 /* JLBFCompiler.mm in Sources */,
 				8851F8E71631893500382E2B /* JLResultViewController.m in Sources */,
+				88FA08DA164191AA006D1B74 /* JLBFCompiler.mm in Sources */,
+				88FA08DB164191AA006D1B74 /* JLRealCompiler.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
