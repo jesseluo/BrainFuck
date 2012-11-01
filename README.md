@@ -13,8 +13,8 @@
 3. 最后一次编译运行成功环境：OS X 10.8 ML + XCode 4.5 + iOS6 SDK  
 
 ##TODO List
-1. [Done]~~完成读入，即','操作~~  
-2. [Done]~~完善BF代码的特殊情况并加入错误处理~~  
+1. [Done] ~~完成读入，即','操作~~
+2. [Done] ~~完善BF代码的特殊情况并加入错误处理~~
 3. sample source选择器  
 4. 规避键盘及UI调整  
 5. Launch image  
